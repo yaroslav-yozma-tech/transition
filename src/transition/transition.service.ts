@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Neo4jService } from 'nest-neo4j';
 import { StatusDto } from './dto/status.dto';
 import { ActionEnum } from './enum/action.enum';
 import { RuleEnum } from './enum/rule.enum';
@@ -11,10 +10,7 @@ import { DestinationResponse } from './response/destination.response';
 
 @Injectable()
 export class TransitionService {
-  constructor(
-    private readonly neo4jService: Neo4jService,
-    private repository: TransitionRepository
-  ) {}
+  constructor(private repository: TransitionRepository) {}
 
   async getDestination(data: StatusDto): Promise<DestinationResponse> {
     const action = ActionEnum[data.action];
