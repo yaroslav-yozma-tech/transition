@@ -4,6 +4,9 @@
 $ npm install
 ```
 
+## .env
+Add .env to root folder file from the link provided
+
 ## Running the app
 
 ```bas
